@@ -24,8 +24,8 @@ type TodoFormProps = {
 
 const Todo = ({ todo, remove }: TodoProps) => {
     return (
-        <li onClick={() => remove(todo.id)}>
-            {todo.val}
+        <li>
+            {todo.val}<button onClick={() => remove(todo.id)}>-</button>
         </li>
     );
 };
