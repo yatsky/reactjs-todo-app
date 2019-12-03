@@ -45,7 +45,7 @@ const TodoForm = ({ addTodo }: TodoFormProps) => {
     let input: HTMLInputElement;
     return (
         <div>
-            <!-- make sure we use correct type here -->
+            {/* make sure we use correct type here */}
             <input ref={(node: HTMLInputElement) => {
                 input = node;
             }} />
@@ -61,12 +61,9 @@ const TodoForm = ({ addTodo }: TodoFormProps) => {
 
 const App: React.FC = () => {
 
-    const [todos, setTodos] = useState([
-        { id: 0, val: "a" },
-        { id: 1, val: "b" }
-    ]);
+    const [todos, setTodos] = useState<TodoType[]>([]);
 
-    const [id, setId] = useState(2);
+    const [id, setId] = useState(0);
     const handleAdd = (val: string) => {
         let todo = { id: id, val: val };
         todos.push(todo);
